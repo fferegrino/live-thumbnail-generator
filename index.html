@@ -1,27 +1,31 @@
 <html>
-    <head>
-        <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.3/build/global/luxon.min.js"></script>
-        <link href="index.css" rel="stylesheet" />
-    </head>
-    <body>
-        <form>
-            <input type="date" id="date" />
-            <input type="time" id="time" />
-            <select id="timezone" name="timezone"></select>
-        </form>
-        <div id="main">
-            <div id="header">
-                <div class="vertical-center">
-🔴 EN VIVO
-</div>
-</div>
-            <div id="cover">
+   <head>
+      <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.3/build/global/luxon.min.js"></script>
+      <link href="index.css" rel="stylesheet" />
+   </head>
+   <body>
+      <form>
+         <input type="date" id="date" />
+         <input type="time" id="time" />
+         <select id="timezone" name="timezone"></select>
+         <input type="file" id="file" />
+      </form>
+      <div id="main">
+         <div id="header">
+            🔴 EN VIVO
+         </div>
+         <div id="cover">
+            <img id="thumbnail" />
+         </div>
+         <div id="footer">
+            <div id="dates">
 
             </div>
-            <div id="footer">
+            <div id="hours">
 
             </div>
-        </div>
-        <script src="index.js"></script>
-    </body>
+         </div>
+      </div>
+      <script src="index.js"></script>
+   </body>
 </html>

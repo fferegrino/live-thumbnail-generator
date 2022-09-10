@@ -1,47 +1,38 @@
-
 #main {
-    background-color: black;
-    width: 1920px;
-    height: 1920px;
-    zoom: 40%;
+	background-color: black;
+	width: 1920px;
+	height: 1920px;
+	zoom: 40%;
 }
-
 #header {
-    color: white;
-    font-size: 11em;
-    height: 260px;
-    background-color: blue;
-    width: 1920px;
-    position: relative;
-    text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-.vertical-center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+	color: white;
+	font-size: 13em;
+	height: 260px;
+	background-color: black;
+	width: 1920px;
+	position: relative;
+	text-align: center;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 #cover {
-    height: 1080px;
-    width: 1920px;
+	height: 1080px;
+	width: 1920px;
 }
-
+#thumbnail {
+	width: 1920px;
+	height: 1080px;
+}
 #footer {
-    color: white;
-    font-size: 8em;
-    height: 580px;
-    width: 1920px;
-    text-align: center;
-    background-color: black;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	padding: 20px;
+	color: white;
+	font-size: 6.7em;
+	height: calc(580px - 40px);
+	width: calc(1920px - 40px);
+	text-align: center;
+	background-color: black;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-
 .time {
-    background-color: white;
-    color: black;
-    padding: 0px 50px;
-    margin: 0 50px;
+	padding: 0px 50px;
+	margin: 0 50px;
 }
