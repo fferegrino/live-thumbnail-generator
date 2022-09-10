@@ -18,6 +18,23 @@ timezone.addEventListener('change', function() {
 });
 
 
+function generateImageDownload() {
+    html2canvas(document.getElementById("main"), {
+        allowTaint: true,
+        useCORS: true,
+      })
+      .then(function (canvas) {
+        // It will return a canvas element
+        let image = canvas.toDataURL("image/png", 0.5);
+        var bses64Image= "data:image/" + image; 
+        document.getElementById('download').setAttribute('href', bses64Image)
+      })
+      .catch((e) => {
+        // Handle errors
+        console.log(e);
+      });
+}
+
 const timezones = [
     "🇲🇽:America/Mexico_City",
     "🇨🇴:America/Bogota",
@@ -76,7 +93,7 @@ function calculateTz() {
         }
         timesFlags.get(movedDate).push(flag)
     });
-    dates.textContent = inputDate.setLocale('es').toLocaleString(luxon.DateTime.DATE_HUGE)
+    dates.textContent = inputDate.setLocale('es-MX').toLocaleString(luxon.DateTime.DATE_HUGE)
     const sortedDates = Array.from(timesFlags.keys()).sort()
     hours.innerHTML = ''
 
@@ -89,15 +106,14 @@ function calculateTz() {
         newText.innerHTML = `${shortTime}&nbsp;${flags.join('')}`.replace(' ', '&nbsp;')
         hours.appendChild(newText)
     });
+
+    generateImageDownload()
 }
 
 calculateTz()
 
 var file = document.getElementById('file'); // File refrence
-
-
 file.addEventListener('change', function() {
-    calculateTz()
 
     var thumbnail = document.getElementById('thumbnail'); // Image reference
     var reader = new FileReader(); // Creating reader instance from FileReader() API
@@ -105,4 +121,5 @@ file.addEventListener('change', function() {
         thumbnail.src = reader.result;
     }, false);
     reader.readAsDataURL(file.files[0]); // Converting file into data URL
+    calculateTz()
 });
